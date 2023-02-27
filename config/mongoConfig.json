@@ -1,3 +1,5 @@
 {
-    "uri":"mongodb://localhost:27017/atelier2"
+    "mongo":{
+        "uri": "mongodb://localhost:27017/NodeDB"
+    }
 }

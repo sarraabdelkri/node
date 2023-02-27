@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.msgpack.min.js.map"></script>
+    </head>
+    <body>
+    <h1>Chat :</h1>
+    <label for="message">Message :</label>
+    <input type="text" id="message" name="message">
+    <input type="submit" value="Send" onclick="sendMessage()">
+        <script>
+
+            const socket = io.connect();
+            socket.on("message", (data) => {
+                p.document.createElement("p");
+                P.innerText = data;
+                document.body.append(p);
+            });
+
+
+            function sendMessage() {
+                const message = document.getElementById("message").value;
+                console.log(message);
+                socket.emit("message", message);
+            }
+        </script>
+
+    </body>
+</html>
